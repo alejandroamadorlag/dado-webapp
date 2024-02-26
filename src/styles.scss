@@ -1,4 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 
+//Font face general
+@font-face {
+    font-family: 'Nexa-Bold';
+    src: url('/assets/fonds/NexaBold.eot');
+    src: url('/assets/fonds/NexaBold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonds/NexaBold.woff2') format('woff2'),
+        url('/assets/fonds/NexaBold.woff') format('woff'),
+        url('/assets/fonds/NexaBold.ttf') format('truetype'),
+        url('/assets/fonds/NexaBold.svg#NexaBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa-Light';
+    src: url('/assets/fonds/NexaLight.eot');
+    src: url('/assets/fonds/NexaLight.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonds/NexaLight.woff2') format('woff2'),
+        url('/assets/fonds/NexaLight.woff') format('woff'),
+        url('/assets/fonds/NexaLight.ttf') format('truetype'),
+        url('/assets/fonds/NexaLight.svg#NexaLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('/assets/fonds/NexaRegular.eot');
+    src: url('/assets/fonds/NexaRegular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonds/NexaRegular.woff2') format('woff2'),
+        url('/assets/fonds/NexaRegular.woff') format('woff'),
+        url('/assets/fonds/NexaRegular.ttf') format('truetype'),
+        url('/assets/fonds/NexaRegular.svg#NexaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Nexa; }
+
+.invalid-feedback {
+    display: block!important;
+    width: 100%;
+    font-size: 0.75rem;
+    color: #ff5b5b;
+    font-family: Nexa;
+}
