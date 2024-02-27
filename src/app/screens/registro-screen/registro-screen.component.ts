@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { UsuariosService } from 'src/app/services/usuarios.service';
 declare var $:any;
 
 @Component({
@@ -26,7 +25,6 @@ export class RegistroScreenComponent implements OnInit {
 
  constructor(
    private location: Location,
-   private usuariosService: UsuariosService,
    private router: Router
  ) { }
 
@@ -67,6 +65,13 @@ export class RegistroScreenComponent implements OnInit {
 
  //Función para detectar el cambio de fecha
  //Para la fecha
+ public changeFecha(event :any){
+  console.log(event);
+  console.log(event.value.toISOString());
+  
+  this.user.fecha_nacimiento = event.value.toISOString().split("T")[0];
+  console.log("Fecha: ", this.user.fecha_nacimiento);
+}
 
 
 }
