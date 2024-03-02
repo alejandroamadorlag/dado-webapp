@@ -3,6 +3,7 @@ import { ValidatorService } from './tools/validator.service';
 import { ErrorsService } from './tools/errors.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -68,6 +69,7 @@ export class UsuariosService {
     if(!this.validatorService.required(data["confirmar_password"])){
       error["confirmar_password"] = this.errorService.required;
     }
+    
 
     if(!this.validatorService.required(data["fecha_nacimiento"])){
       error["fecha_nacimiento"] = this.errorService.required;
@@ -111,4 +113,9 @@ export class UsuariosService {
     
   }
 
+  //Aquí agregamos servicios HTTP
+  //Servicio para registrar un nuevo usuario
+  public registrarUsuario (data: any): Observable <any>{
+    return this.http.post<any>(`${environment.url_api}/users/`,data, httpOptions);
+  }
 }
